@@ -49,3 +49,5 @@ ADD adbkey $HOME/.android/adbkey
 ADD adbkey.pub $HOME/.android/adbkey.pub
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN yes | ${ANDROID_HOME}/tools/bin/sdkmanager --licenses
