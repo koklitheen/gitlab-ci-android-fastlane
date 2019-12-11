@@ -1,5 +1,5 @@
-FROM phusion/baseimage:0.10.0
-LABEL maintainer="United Classifieds <unitedclassifiedsapps@gmail.com>"
+FROM phusion/baseimage:0.11
+LABEL maintainer="Li Theen Kok <koklitheen@gmail.com>"
 
 CMD ["/sbin/my_init"]
 
@@ -8,8 +8,8 @@ ENV LANGUAGE "en_US.UTF-8"
 ENV LANG "en_US.UTF-8"
 
 ENV VERSION_SDK_TOOLS "4333796"
-ENV VERSION_BUILD_TOOLS "27.0.3"
-ENV VERSION_TARGET_SDK "27"
+ENV VERSION_BUILD_TOOLS "29.0.2"
+ENV VERSION_TARGET_SDK "29"
 
 ENV ANDROID_HOME "/sdk"
 
@@ -49,3 +49,5 @@ ADD adbkey $HOME/.android/adbkey
 ADD adbkey.pub $HOME/.android/adbkey.pub
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN yes | ${ANDROID_HOME}/tools/bin/sdkmanager --licenses
