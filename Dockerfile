@@ -13,6 +13,9 @@ ENV VERSION_TARGET_SDK "29"
 
 ENV ANDROID_HOME "/sdk"
 
+ENV JVM_OPTS "-Xmx2048m"
+ENV GRADLE_OPTS "-Xmx1536m -XX:+HeapDumpOnOutOfMemoryError -Dorg.gradle.caching=true -Dorg.gradle.configureondemand=true -Dkotlin.compiler.execution.strategy=in-process -Dkotlin.incremental=false"
+
 ENV PATH "$PATH:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools"
 ENV DEBIAN_FRONTEND noninteractive
 
